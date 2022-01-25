@@ -39,8 +39,6 @@ function displayItems(items, container) {
   }
 }
 
-
-
 displayItems(items_array, "items");
 
 function addOrRemoveItemsFromCart(action) {

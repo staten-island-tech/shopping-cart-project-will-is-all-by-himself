@@ -10,7 +10,7 @@
     <div id="wrapper">
        <div id="container">
            <h1>Shopping list</h1>
-           <div id="items"></div>
+           <div id="items" class="bg-slate-700"> </div>
        </div>
         <div id="container">
             <h1>Cart</h1>
@@ -56,5 +56,13 @@ li{
 #container { 
     margin: 50px;
 } 
+.items {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 5px;
+grid-row-gap: 5px;
+}
+
 
 </style>

@@ -1,13 +1,13 @@
-let items_array = [
-  { name: "Bible", price: "$20.69", id: 1, count: 1 },
-  { name: "Among Us Plushie", price: "30.43", id: 2, count: 1 },
-  { name: "Apple", price: "1.01", id: 3, count: 1 },
-  { name: "Calcite", price: "13", id: 4, count: 1 },
-  { name: "Life Size Rem Figure", price: "$40,000", id: 5, count: 1 },
-  { name: "2 Beetles", price: "178,000.00", id: 6, count: 1 },
-  { name: "RTX 3090", price: "2.00", id: 7, count: 1 },
-  { name: "Land", price: "325,100.00", id: 8, count: 1 },
-  { name: "Warship", price: "1,200,000,000.00", id: 9, count: 1 },
+const store = [
+  { name: "Jordan 1 Retro High OG Premium", color: "Yin Yang", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/008/491/532/original/61240_01.jpg.jpeg?action=crop&width=950", price: "20.69"},
+  { name: "Jordan 1 Retro High OG", color: "Royal Toe", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/035/766/949/original/519961_01.jpg.jpeg?action=crop&width=950", price: "30.43"},
+  { name: "Jordan 1 Retro High OG", color: "Court Purple 2.0", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/036/301/423/original/517360_01.jpg.jpeg?action=crop&width=950", price: "1.01"},
+  { name: "Jordan 1 Retro High OG", color: "University Blue", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/049/887/653/original/599627_01.jpg.jpeg?action=crop&width=950", price: "13"},
+  { name: "Jordan 1 Retro High OG", color: "Dark Mocha", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/008/491/532/original/61240_01.jpg.jpeg?action=crop&width=950", price: "$40,000"},
+  { name: "Jordan 1 Retro High OG", color: "Chicago", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/046/085/372/original/14741_01.jpg.jpeg?action=crop&width=950", price: "178,000.00"},
+  { name: "Jordan 1 High 1985", color: "Chicago", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/036/234/482/original/55279_01.jpg.jpeg?action=crop&width=950", price: "2.00", count: 1 },
+  { name: "Jordan 1 Retro High OG", color: "Bred", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/008/487/268/original/13578_01.jpg.jpeg?action=crop&width=950", price: "325,100.00"},
+  { name: "Jordan 1 Retro High OG", color: "Patent Bred", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/062/992/408/original/784379_01.jpg.jpeg?action=crop&width=950", price: "1,200,000,000.00"},
 ];
 
 let cart = [];

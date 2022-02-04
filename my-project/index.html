@@ -9,60 +9,14 @@
 </head>
 <body class="bg-red-400">
     <div id="wrapper">
-       <div id="container">
-           <h1>Shopping list</h1>
-           <div id="items" class="bg-slate-700"> </div>
-       </div>
+       <div id="container"> </div>
+           <h1 class="p-20 bg-red-500">Shopping list</h1>
+           <section id="items" class="storedisplay grid grid-rows-3 grid-cols-3 gap-4 bg-gray-100 p-20"> </section>
         <div id="container">
             <h1>Cart</h1>
             <div id="cart"></div>
         </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./js/script.js" type="module"></script>
 </body>
 </html>
-
-<style>
-
-#wrapper { 
-    display: flex;
-    } 
-li{ 
-    width: 100px; 
-    height: 30px; 
-    list-style: none;  
-    border-radius: 10px; 
-    margin: 5px; 
-    padding: 5px; 
-    color: white; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-} 
-#badge {
-     width: 20px; 
-     height: 20px; 
-     background-color: #f0ad4e; 
-     color: red; 
-     padding: 2px 2px; 
-     border-radius: 5px; 
-     margin-left: 10px; 
-     text-align: center; 
-     float: right; 
-     } 
-#items #badge {  
-    display: none; 
-} 
-#container { 
-    margin: 50px;
-} 
-.items {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 5px;
-grid-row-gap: 5px;
-}
-
-
-</style>

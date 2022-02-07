@@ -18,27 +18,24 @@ window.addEventListener("DOMContentLoaded", function() {
 
 function displayItems(store) {
     let displayStore = store.map(function(item) {
-        return `<article class="card p-20 bg-white">
-    <h2 class="itemname text-center p-4 bg-white">${item.name}</h2>
-    <h3 class="itemcolor text-center p-4 bg-red-400">${item.color}</h3>
-    <img class="itemimg p-4" src="${item.img}" alt="Image of ${item.name}"/>
-    <h4 class="price text-center p-4 bg-red-400">$${item.price}</h4>
+      return `<article class="card p-20 bg-white">
+        <h2 class="itemname text-center p-4 bg-white">
+          ${item.name}</h2>
+        <h3 class="itemcolor text-center p-4 bg-red-400">
+          ${item.color}</h3>
+        <img class="itemimg p-4" src="${item.img}" alt="Image of ${item.name} ${item.color}"/>
+        <h4 class="price text-center p-4 bg-red-400">
+          $${item.price}</h4>
+        <div class="add-to-cart p-6" onclick="addToCart(${item.id})">
+          <img class="m-auto w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
+        </div>
     </article>`
     });
     displayStore = displayStore.join("");
     DOMSelectors.shop.innerHTML = displayStore;
-    console.log(displayStore);
 };
 
-DOMSelectors.shoes.addEventListener('click', function() {
-    const shoes = store.filter((store) => store.category === "shoe");
-    DOMSelectors.shop.innerHTML = ""
-    shoes.forEach((shoe) => {
-        DOMSelectors.shop.insertAdjacentHTML("afterbegin", `<article class="card">
-    <h2 class="itemname">${shoe.name}</h2>
-    <h3 class="itemcolor">${shoe.color}</h3>
-    <img class="itemimg" src="${shoe.img}" alt="Image of ${store.name}"/>
-    <h4 class="price">$${shoe.price}</h4>
-    </article>`)
-    });
-});
+function addToCart(id) {
+  console.log(id);
+}
+

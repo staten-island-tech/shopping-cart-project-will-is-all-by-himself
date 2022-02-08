@@ -2,6 +2,7 @@ import { store } from "./shop";
 console.log(store);
 const DOMSelectors = {
     shop: document.querySelector('.storedisplay'),
+    add: document.getElementsByClassName('add-to-cart')
 }
 
 window.addEventListener("DOMContentLoaded", function() {
@@ -19,7 +20,7 @@ function displayItems(store) {
         <img class="itemimg p-4" src="${item.img}" alt="Image of ${item.name} ${item.color}"/>
         <h4 class="price text-center p-4 bg-red-400">
           $${item.price}</h4>
-        <div class="add-to-cart p-6" onclick="addToCart(${item.id})">
+        <div class="add-to-cart p-6">
           <img class="m-auto w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
         </div>
       </article>
@@ -28,6 +29,9 @@ function displayItems(store) {
   displayStore = displayStore.join("");
   DOMSelectors.shop.innerHTML = displayStore;
 }
+
+DOMSelectors.add.addEventListener("click", console.log(id)
+
 //cart
 let cart = [];
 //add to

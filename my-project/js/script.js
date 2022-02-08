@@ -1,15 +1,7 @@
 import { store } from "./shop";
 console.log(store);
 const DOMSelectors = {
-    all: document.getElementById("all"),
-    outofstock: document.getElementById("featured"),
-    shoes: document.getElementById("shoes"),
-    jewelry: document.getElementById("jewelry"),
-    checkbox: document.querySelector('.checkbox'),
     shop: document.querySelector('.storedisplay'),
-    featured: document.querySelector('.home'),
-    card: document.querySelector('.card'),
-    price: document.querySelector('.price'),
 }
 
 window.addEventListener("DOMContentLoaded", function() {
@@ -17,8 +9,9 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 function displayItems(store) {
-    let displayStore = store.map(function(item) {
-      return `<article class="card p-20 bg-white">
+  let displayStore = store.map(function(item) {
+    return `
+      <article class="card p-20 bg-white">
         <h2 class="itemname text-center p-4 bg-white">
           ${item.name}</h2>
         <h3 class="itemcolor text-center p-4 bg-red-400">
@@ -29,12 +22,15 @@ function displayItems(store) {
         <div class="add-to-cart p-6" onclick="addToCart(${item.id})">
           <img class="m-auto w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
         </div>
-    </article>`
-    });
-    displayStore = displayStore.join("");
-    DOMSelectors.shop.innerHTML = displayStore;
-};
-
+      </article>
+    `;
+  });
+  displayStore = displayStore.join("");
+  DOMSelectors.shop.innerHTML = displayStore;
+}
+//cart
+let cart = [];
+//add to
 function addToCart(id) {
   console.log(id);
 }

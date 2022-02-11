@@ -9,6 +9,62 @@ const store = [
     { id: 7, name: "Jordan 1 Retro High OG", color: "Bred", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/008/487/268/original/13578_01.jpg.jpeg?action=crop&width=950", price: "325,100.00", category: "shoe"},
     { id: 8, name: "Jordan 1 Retro High OG", color: "Patent Bred", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/062/992/408/original/784379_01.jpg.jpeg?action=crop&width=950", price: "1,200,000,000.00", category: "shoe"},
   ];
-  export { store }
 
-  
+
+  const cartlist = document.getElementsByClassName('cart-items');
+  const shop = document.querySelector('.storedisplay');
+
+let cart = [];
+
+function displayItems(){
+    store.forEach( (item) => {
+      shop.innerHTML += `
+      <article class="card p-20 bg-white">
+        <h2 class="itemname text-center p-4 bg-white">
+          ${item.name}</h2>
+        <h3 class="itemcolor text-center p-4 bg-red-400">
+          ${item.color}</h3>
+        <img class="itemimg p-4" src="${item.img}" alt="Image of ${item.name} ${item.color}"/>
+        <h4 class="price text-center p-4 bg-red-400">
+          $${item.price}</h4>
+        <button class="add-to-cart p-6" onclick="addToCart(${item.id})">
+          <img class="m-auto w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
+        </button>
+      </article>
+    `; 
+    });
+  }
+  displayItems();
+
+function addToCart(id) {
+    const thing = store.find((item) => item.id === id)
+
+    cart.push(thing);
+
+    console.log(cart)
+
+    updateCart()
+  }
+
+function updateCart(){
+    renderCartItems();
+}
+
+function renderCartItems(){
+    cart.forEach(() => {
+        cartlist.innerHTML += `
+        <article class="card p-20 bg-white">
+        <h2 class="itemname text-center p-4 bg-white">
+          ${item.name}</h2>
+        <h3 class="itemcolor text-center p-4 bg-red-400">
+          ${item.color}</h3>
+        <img class="itemimg p-4" src="${item.img}" alt="Image of ${item.name} ${item.color}"/>
+        <h4 class="price text-center p-4 bg-red-400">
+          $${item.price}</h4>
+        <button class="add-to-cart p-6" onclick="addToCart(${item.id})">
+          <img class="m-auto w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
+        </button>
+      </article>
+        `
+    })
+}

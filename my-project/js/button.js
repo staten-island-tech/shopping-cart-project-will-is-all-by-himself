@@ -8,10 +8,13 @@ const store = [
     { id: 6, name: "Jordan 1 High 1985", color: "Chicago", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/036/234/482/original/55279_01.jpg.jpeg?action=crop&width=950", price: "2.00", category: "shoe"},
     { id: 7, name: "Jordan 1 Retro High OG", color: "Bred", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/008/487/268/original/13578_01.jpg.jpeg?action=crop&width=950", price: "325,100.00", category: "shoe"},
     { id: 8, name: "Jordan 1 Retro High OG", color: "Patent Bred", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/062/992/408/original/784379_01.jpg.jpeg?action=crop&width=950", price: "1,200,000,000.00", category: "shoe"},
+    { id: 9, name: "Jordan 1 Retro High OG", color: "Dark Marina Blue", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/064/377/039/original/815796_01.jpg.jpeg?action=crop&width=950", price: "1,200,000,000.00", category: "shoe"},
+    { id: 10, name: "Jordan 1 Retro High OG", color: "Hyper Royal", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/052/666/679/original/641289_01.jpg.jpeg?action=crop&width=950", price: "1,200,000,000.00", category: "shoe"},
+    { id: 11, name: "Jordan 1 Retro High OG", color: "Shadow 2.0", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/053/600/400/original/721462_01.jpg.jpeg?action=crop&width=950", price: "1,200,000,000.00", category: "shoe"},
   ];
 
 
-  const cartlist = document.getElementsByClassName('cart-items');
+  const cartlist = document.querySelector('.item-cart');
   const shop = document.querySelector('.storedisplay');
 
 let cart = [];
@@ -51,7 +54,8 @@ function updateCart(){
 }
 
 function renderCartItems(){
-    cart.forEach(() => {
+    cartlist.innerHTML = "";
+    cart.forEach((item) => {
         cartlist.innerHTML += `
         <article class="card p-20 bg-white">
         <h2 class="itemname text-center p-4 bg-white">
@@ -61,9 +65,6 @@ function renderCartItems(){
         <img class="itemimg p-4" src="${item.img}" alt="Image of ${item.name} ${item.color}"/>
         <h4 class="price text-center p-4 bg-red-400">
           $${item.price}</h4>
-        <button class="add-to-cart p-6" onclick="addToCart(${item.id})">
-          <img class="m-auto w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
-        </button>
       </article>
         `
     })

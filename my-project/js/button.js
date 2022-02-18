@@ -16,6 +16,7 @@ const store = [
 
   const cartlist = document.querySelector('.item-cart');
   const shop = document.querySelector('.storedisplay');
+  document.querySelector('.add-to-cart').addEventListener('click', addToCart)
 
 let cart = [];
 

@@ -11,7 +11,7 @@ const store = [
     { id: 9, name: "Jordan 1 Retro High OG", color: "Dark Marina Blue", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/064/377/039/original/815796_01.jpg.jpeg?action=crop&width=950", price: "1,200", category: "shoe"},
     { id: 10, name: "Jordan 1 Retro High OG", color: "Hyper Royal", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/052/666/679/original/641289_01.jpg.jpeg?action=crop&width=950", price: "200", category: "shoe"},
     { id: 11, name: "Jordan 1 Retro High OG", color: "Shadow 2.0", img: "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/053/600/400/original/721462_01.jpg.jpeg?action=crop&width=950", price: "1,000", category: "shoe"},
-  ];
+];
 
 
   const cartlist = document.querySelector('.item-cart');

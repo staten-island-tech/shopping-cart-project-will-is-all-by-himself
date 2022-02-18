@@ -16,7 +16,6 @@ const store = [
 
   const cartlist = document.querySelector('.item-cart');
   const shop = document.querySelector('.storedisplay');
-  document.querySelector('.add-to-cart').addEventListener('click', addToCart)
 
 let cart = [];
 
@@ -31,7 +30,7 @@ function displayItems(){
         <img class="itemimg p-4" src="${item.img}" alt="Image of ${item.name} ${item.color}"/>
         <h4 class="price text-center p-4 bg-red-400">
           $${item.price}</h4>
-        <button class="add-to-cart p-6">
+        <button class="add-to-cart p-6" onclick="addToCart(${item.id})">
           <img class="m-auto w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
         </button>
       </article>

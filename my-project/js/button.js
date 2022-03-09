@@ -30,7 +30,7 @@ function displayItems(){
         <img class="itemimg p-4" src="${item.img}" alt="Image of ${item.name} ${item.color}"/>
         <h4 class="price text-center p-4 bg-red-400">
           $${item.price}</h4>
-        <button class="add-to-cart p-6" onclick="addToCart(${item.id})">
+        <button class="add-to-cart p-6">
           <img class="m-auto w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
         </button>
       </article>
@@ -38,6 +38,7 @@ function displayItems(){
     });
   }
   displayItems();
+
 
 function addToCart(id) {
     const thing = store.find((item) => item.id === id)

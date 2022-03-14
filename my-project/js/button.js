@@ -17,12 +17,11 @@ const store = [
   const cartlist = document.querySelector('.item-cart');
   const shop = document.querySelector('.storedisplay');
 
-let cart = [];
 
 function displayItems(){
-    store.forEach( (item) => {
+    store.forEach( (item, index) => {
       shop.innerHTML += `
-      <article class="card p-20 bg-white">
+      <article class="card p-20 bg-white" id="${index}">
         <h2 class="itemname text-center p-4 bg-white">
           ${item.name}</h2>
         <h3 class="itemcolor text-center p-4 bg-red-400">
@@ -39,20 +38,34 @@ function displayItems(){
   }
   displayItems();
 
-
-function addToCart(id) {
-    const thing = store.find((item) => item.id === id)
-
-    cart.push(thing);
-
-    console.log(cart)
-
-    updateCart()
-  }
-
-function updateCart(){
-    renderCartItems();
+let cart = [];
+let total = null;
+function addToCart(event) {
+  const item = event.target.parentNode.id;
+  cart.push(store[item]); 
+  console.log(item);
+  total += store[item].price;
+  cartlist.innerHTML = " ";
+  cart.forEach((item) => {
+    cartlist.innerHTML += `
+        <article class="card p-20 bg-white">
+        <h2 class="itemname text-center p-4 bg-white">
+          ${item.name}</h2>
+        <h3 class="itemcolor text-center p-4 bg-red-400">
+          ${item.color}</h3>
+        <img class="itemimg p-4" src="${item.img}" alt="Image of ${item.name} ${item.color}"/>
+        <h4 class="price text-center p-4 bg-red-400">
+          $${item.price}</h4>
+      </article>
+        `
+  })
 }
+
+const buttons = Array.from(document.querySelectorAll(".add-to-cart"));
+buttons.forEach((button) => {
+  button.addEventListener("click", addToCart);
+});
+
 
 function renderCartItems(){
     cartlist.innerHTML = "";

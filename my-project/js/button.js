@@ -39,12 +39,9 @@ function displayItems(){
   displayItems();
 
 let cart = [];
-let total = null;
 function addToCart(event) {
-  const item = event.target.parentNode.id;
-  cart.push(store[item]); 
-  console.log(item);
-  total += store[item].price;
+  const var1 = event.target.parentNode.id;
+  cart.push(store[var1]); 
   cartlist.innerHTML = " ";
   cart.forEach((item) => {
     cartlist.innerHTML += `

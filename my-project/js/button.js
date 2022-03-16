@@ -41,7 +41,7 @@ function displayItems(){
 let cart = [];
 function addToCart(event) {
   const var1 = event.target.parentNode.id;
-  cart.push(store[var1]); 
+  cart.push(store[var1]);  
   cartlist.innerHTML = " ";
   cart.forEach((item) => {
     cartlist.innerHTML += `

@@ -30,7 +30,7 @@ function displayItems(){
         <h4 class="price text-center p-4 bg-red-400">
           $${item.price}</h4>
         <button class="add-to-cart p-6">
-          <img class="m-auto w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
+          Add to Cart
         </button>
       </article>
     `; 
@@ -41,7 +41,8 @@ function displayItems(){
 let cart = [];
 function addToCart(event) {
   const var1 = event.target.parentNode.id;
-  cart.push(store[var1]);  
+  cart.push(store[var1]);
+  console.log(var1)
   cartlist.innerHTML = " ";
   cart.forEach((item) => {
     cartlist.innerHTML += `
@@ -57,7 +58,6 @@ function addToCart(event) {
         `
   })
 }
-
 const buttons = Array.from(document.querySelectorAll(".add-to-cart"));
 buttons.forEach((button) => {
   button.addEventListener("click", addToCart);
